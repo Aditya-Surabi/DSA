@@ -1,0 +1,55 @@
+Run times
+Access - O(n)   //Traverse the list to find the node
+Search - O(n)   //Traverse the list to find the node
+Insert - O(1)   //One operation to add new node to end of list
+Delete - O(1)   //One operation to remove node.
+
+
+Creating a linked list in Java
+
+public class Node {
+
+  int data;     //Value stored  in the node
+  Node next = null;    // Points to the next node in the list.
+
+  //Constructor
+  public Node(int d){
+    data = d;   //When initializing the node with its value.
+  }
+
+  void addToTail(int d){
+
+    Node end = new Node(d); //create a node object with passed value;
+    Node n = this;          //Initialize a variable that represents a node in the current list.
+    while(n.next != null){  //Checking to find the end of the list (traverse the list)
+      n = n.next;           //Since the end was not found at a particular node move to the next node.
+    }
+    //The while loop is exited when the end of the list has been found.
+    //n is now equal to the last node.
+    n.next = end; //n (which is the last node in the list) points to the node (new end of list) being added.
+  }
+}
+
+Deleting a node.
+How it works:
+a ->  b  ->  c
+
+to delete b we have a's pointer point to c and have b's pointer = null.
+
+Node deleteNode(Node head, int d) { //Pass the head and value you want removed
+  Node n = head;
+
+  if(n.data == d){ //Checking if the head contains the value you want to remove
+    return head.next;
+  }
+
+  while(n.next != null){  //Traverse list
+    if (n.next.data == d){
+      n.next = n.next.next; //moving the pointer (How we delete the node).
+      return head;  //value has been removed return the head of the list.
+    }
+    n = n.next;
+
+  }
+  return head;
+}
