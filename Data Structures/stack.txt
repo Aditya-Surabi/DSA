@@ -1,0 +1,23 @@
+Stacks are built into Java.
+
+Stacks operate on the principle of first in last out. A Pringles can is a good physical representation
+of a stack. The chip at the bottom was the first to be put in but will be the last one out. The chip at the top
+was the last to be put in but will be the first one out.
+
+Methods
+
+isEmpty()
+returns true is the stack is empty
+
+peek()
+returns top element of stack but does not remove it.
+
+pop()
+returns top element of stack and removes it.
+
+push()
+adds element to top of stack.
+
+Declaration
+
+Stack st = new Stack();
