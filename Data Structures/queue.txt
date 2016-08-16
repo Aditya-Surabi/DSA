@@ -1,0 +1,21 @@
+Queue are built into Java but as an interface. This means you can't explicitly instantiate a queue
+like this : Queue a = new Queue();   X
+
+ You must instantiate an implementation of it. example linkedlist
+ like this: Queue a = new LinkedList();
+
+Queue operate on the principle of first in first out. A line up is a good representation
+of how a queue operates. First person in lines gets to go first. Last person in line goes last.
+
+Wrapper Implementation
+
+public class SimpleQueue implements Queue{
+
+  private LinkedList<Object> data = new LinkedList<Object>();
+  public void enqueue(Object item) {data.addLast(item);}
+  public Object dequeue() {return data.removeFirst();}
+  public Object peek() {return data.getFirst();}
+  public int size() {return data.size();}
+  public boolean isEmpty() {return data.isEmpty();}
+
+}
